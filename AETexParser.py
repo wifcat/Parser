@@ -1,3 +1,4 @@
+#   No more using arg parse to convert dds2tex (All in one)
 #   tools made for bully ae modder
 #   coded by Ateris https://youtube.com/c/zenichen 
 #   usage: python AETexParser.py
@@ -53,4 +54,5 @@ for dds in dds_files:
         print(f"Converted to {final_output_path}")
 
     except Exception as e:
+
         print(f"Error {dds}: {e}")
