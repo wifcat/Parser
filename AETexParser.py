@@ -1,8 +1,7 @@
-#   No more using arg parse to convert dds2tex (All in one)
 #   tools made for bully ae modder
 #   coded by Ateris https://youtube.com/c/zenichen 
 #   usage: python AETexParser.py
-#          the base.tex must be the same with all.py and aa.py 
+#          the base.tex *must* be on the same folder with AETexParser.py, base.tex and aa.py 
 #          the aa.py is your dds2tex conversion file, rename it to aa.py
 #   discord: wifcat
 #   donate: https://saweria.co/ateris
@@ -54,5 +53,4 @@ for dds in dds_files:
         print(f"Converted to {final_output_path}")
 
     except Exception as e:
-
         print(f"Error {dds}: {e}")
