@@ -13,18 +13,18 @@ import shutil
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
 output_dir = os.path.join(base_dir, "output")
-aa_py = os.path.join(base_dir, "aa.py") # make sure this is the same as your dds2tex file name
+aa_py = os.path.join(base_dir, "aa.py") # make sure your dds2tex.py is the same like this
 base_tex = os.path.join(base_dir, "base.tex") # copy one from bully ae obb and rename it to base.tex
 
-# If dds is here or not
+# If tex file exist
 if not os.path.exists(base_tex):
     print("base.tex not found!")
     exit()
 
-# Immediately create new output folder
+# output folde
 os.makedirs(output_dir, exist_ok=True)
 
-# Find all dds files from the same directory with this file
+# find the dds file that are in the same dir
 dds_files = [f for f in os.listdir(base_dir) if f.lower().endswith(".dds")]
 
 if not dds_files:
@@ -36,7 +36,7 @@ for dds in dds_files:
     filename_no_ext = os.path.splitext(dds)[0]
     final_output_path = os.path.join(output_dir, filename_no_ext + ".tex")
 
-    # overwrite base.tex to its dds file name to /output
+    # overwrite base.tex file name to its dds file name to: /output
     cmd = ["python", aa_py, "-i", input_path, "-o", base_tex, "-c"]
 
     print(f"\nPARSING {dds} -> base.tex -> output/{filename_no_ext}.tex ...")
@@ -54,3 +54,4 @@ for dds in dds_files:
 
     except Exception as e:
         print(f"Error {dds}: {e}")
+
